@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI梦境奇遇记</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #1a1a2e;
+            color: #e0e0e0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            background-color: #162131;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0称);
+            text-align: center;
+            max-width: 500px;
+            width: 90%;
+        }
+        h1 {
+            color: #00bfff;
+            margin-bottom: 20px;
+        }
+        p {
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        .input-group {
+            margin-bottom: 20px;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #2d3748;
+            color: white;
+            font-size: 16px;
+        }
+        button {
+            background-color: #00bfff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #0096ff;
+        }
+        .error {
+            color: red;
+            margin-top: 10px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>AI梦境奇遇记</h1>
+        <p>请输入您的DeepSeek API Key:</p >
+        <div class="input-group">
+            <input type="text" id="apiKeyInput" placeholder="请输入API Key">
+            <div id="error" class="error">请输入有效的API Key</div>
+        </div>
+        <button onclick="submitApiKey()">开始冒险</button>
+    </div>
+
+    <script>
+        function submitApiKey() {
+            const apiKey = document.getElementById('apiKeyInput').value.trim();
+            const errorDiv = document.getElementById('error');
+
+            if (apiKey === '') {
+                errorDiv.style.display = 'block';
+                return;
+            }
+
+            // 验证 API Key 格式（简单检查是否以 sk- 开头）
+            if (!apiKey.startsWith('sk-')) {
+                errorDiv.textContent = 'API Key 必须以 sk- 开头';
+                errorDiv.style.display = 'block';
+                return;
+            }
+
+            // 保存 API Key 到 localStorage（可选）
+            localStorage.setItem('deepseekApiKey', apiKey);
+
+            // 跳转到游戏页面
+            window.location.href = 'game.html';
+        }
+    </script>
+</body>
+</html>

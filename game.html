@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI梦境奇遇记 - 游戏界面</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>AI梦境奇遇记</h1>
+            <p class="subtitle">与 AI 共同探索梦境世界</p >
+        </div>
+
+        <div class="story-container" id="storyContainer">
+            <!-- 故事内容将在这里显示 -->
+            <div class="message ai">
+                <div class="avatar">🤖</div>
+                <div class="content">欢迎来到梦境世界！请告诉我你想做什么？</div>
+            </div>
+        </div>
+
+        <div class="input-area">
+            <div class="input-group">
+                <input type="text" id="userInput" placeholder="输入你的想法..." />
+                <button onclick="sendMessage()">发送</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
